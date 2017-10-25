@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Bmi</string>
+    <string name="text_weight">Weight</string>
+    <string name="text_height">Height</string>
+    <string name="btn_calculate">Calculate BMI</string>
+    <string name="btn_help">Help</string>
+    <string name="hint_weight">inputWeight</string>
+    <string name="hint_height">inputHeight</string>
+</resources>
