@@ -1,5 +1,6 @@
 package com.admin.claire.bmi;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
 
         initView();
         btnHelp.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 float weight = Float.parseFloat(w);
                 float height = Float.parseFloat(h);
                 float bmi = weight / (height * height);
+            /*
                 Toast.makeText(this, "BMI:" + String.valueOf(bmi) , Toast.LENGTH_SHORT).show();
                 new AlertDialog.Builder(this)
                         .setMessage(bmi + "")
@@ -56,13 +60,52 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("OK",null)
                         .setNegativeButton("Cancel",null)
                         .show();
+             */
+            Intent intent = new Intent(this,ResultActivity.class);
+            intent.putExtra(getString(R.string.bmi_extra), bmi);
+            startActivity(intent);
 
 
         }catch (Exception e){
             e.printStackTrace();
-            Toast.makeText(this, "請輸入身高體重...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.input_weight_height, Toast.LENGTH_SHORT).show();
         }
 
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(this, "OnStart", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
     }
 }

@@ -6,4 +6,7 @@
     <string name="btn_help">Help</string>
     <string name="hint_weight">inputWeight</string>
     <string name="hint_height">inputHeight</string>
+    <string name="bmi_extra">BMI_EXTRA</string>
+    <string name="bmi_number">Your BMI :</string>
+    <string name="input_weight_height">請輸入身高體重!!</string>
 </resources>
